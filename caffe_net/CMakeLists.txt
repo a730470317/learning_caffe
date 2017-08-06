@@ -22,5 +22,4 @@ target_link_libraries(${PROJECT_NAME} boost_system)
 
 include_directories(${CAFFE_DIR}/include ${glog_DIR})
 install(TARGETS caffe_net RUNTIME DESTINATION bin)
-
-file(COPY ${CAFFE_LIB_DIR}/ DESTINATION ./ )
+file(COPY ${CAFFE_LIB_DIR}/ DESTINATION ./ )                            #copy file from caffe/lib to current dir
