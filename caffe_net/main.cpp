@@ -29,6 +29,18 @@ a.data_at(u, v, w, x)<<endl;
 
 int main(void)
 {
-    std::srtring proto("deploy.prototxt");
-    
-}
+    std::string proto("../deploy.prototxt");
+    Net<float> nn(proto,caffe::TEST);
+    vector<string> bn = nn.blob_names();
+    for(int i=0;i<bn.size();i++)
+    {
+        cout << "Blob #" << i<< ": " <<bn[i]<<endl;
+    }
+    bn = nn.layer_names();
+    for(int i=0;i<bn.size();i++)
+    {
+        cout << "Layer #" << i<< ": " <<bn[i]<<endl;
+    }
+    getchar();
+    return 0;
+} 
