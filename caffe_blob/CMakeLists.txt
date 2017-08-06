@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
+set(PROJECT_NAME caffe_blob)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(Caffe_DIR /home/zivlin/Desktop/caffe-master/install/)
 set(glog_DIR /usr/include/glog)
@@ -23,18 +24,17 @@ find_package(Caffe  REQUIRED)
 #message("--Caffe_INCLUDE_DIRS: " ${Caffe_INCLUDE_DIRS})
 #message("--Caffe_LIBRARIES: " ${Caffe_LIBRARIES})
 
-set(PROJECT_NAME caffe_test)            
 set(SOURCE_FILES main.cpp)
 project(${PROJECT_NAME})                                                #PROJECT_NAME
 MESSAGE("--project name is " ${PROJECT_NAME})                           #print some massage for debug
 
-add_executable(caffe_test ${SOURCE_FILES})
+add_executable(caffe_blob ${SOURCE_FILES})
+include_directories(${Caffe_DIR}/include ${glog_DIR})
 link_directories(${Caffe_DIR}/install/lib/x86_64-linux-gnu/)
 target_link_libraries(${PROJECT_NAME} caffe)
 target_link_libraries(${PROJECT_NAME} glog)
 target_link_libraries(${PROJECT_NAME} boost_system)
 
-include_directories(${Caffe_DIR}/include ${glog_DIR})
 # set_property(TARGET *binary* PROPERTY INSTALL_RPATH_USE_LINK_PATH TRUE)
 # MESSAGE()
-install(TARGETS caffe_test RUNTIME DESTINATION bin)
+install(TARGETS caffe_blob RUNTIME DESTINATION bin)
