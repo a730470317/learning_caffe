@@ -18,7 +18,8 @@ void display(Blob<T> &a)
             {
                 for(int x = 0; x < a.width(); x++)
                 {
-                    cout<<"a["<<u<<"]["<<v<<"]["<<w<<"]["<<x<<"] = "<< a.data_at(u, v, w, x)<<endl;
+                    cout<<"a["<<u<<"]["<<v<<"]["<<w<<"]["<<x<<"] = "<< 
+a.data_at(u, v, w, x)<<endl;
                 }
             }
         }
