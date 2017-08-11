@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-set(CAFFE_DIR /home/zivlin/Desktop/caffe-master/install)
+set(CAFFE_DIR $ENV{CAFFE_ROOT}/install)
 set(glog_DIR /usr/include/glog)
 set(CAFFE_LIB_DIR ${CAFFE_DIR}/lib/x86_64-linux-gnu)
 add_definitions(-DCPU_ONLY)
